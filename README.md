@@ -30,7 +30,7 @@ curl -v -H Content-type:application/json http://localhost:8080/cxf-bean/api/cust
 To run the same code in TomEE, you just need to change three things:
 
 - Remove all dependencies in `pom.xml` and replace with a single dependency on `javax/javaee-api`.
-- Remove the servlet configuration from `web.xml`. You can even delete it if your webapp doesn't need it.
+- Remove the servlet configuration from `web.xml`. You can even delete the file if your webapp won't need it.
 - Remove the `getClasses()` method from `Service.java`, and instead add the following annotation:
 ```java
 @Stateless
