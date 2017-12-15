@@ -16,16 +16,14 @@ Just do `mvn clean package`, and then copy the file `target/cxf-bean.war` to you
 To demonstrate marshalling of an instance of the `Customer.java` bean:
 
 ```bash
-curl -v http://{HOSTNAME}:8080/cxf-bean/api/customer
+curl -v http://localhost:8080/cxf-bean/api/customer
 ```
 
 To demonstrate unmarshalling of the same bean:
 
 ```bash
-curl -v -H Content-type:application/json http://{HOSTNAME}:8080/cxf-bean/api/customer -d '{"name":"Foo"}'
+curl -v -H Content-type:application/json http://localhost:8080/cxf-bean/api/customer -d '{"name":"Foo"}'
 ```
-
-Replace `{HOSTNAME}` with `localhost` or wherever you are serving Tomcat from.
 
 # TomEE
 
