@@ -31,9 +31,9 @@ Replace `{HOSTNAME}` with `localhost` or wherever you are serving Tomcat from.
 
 To run the same code in TomEE, you just need to change three things:
 
-- Replace all dependencies in `pom.xml` with `javax/javaee-api`.
+- Remove all dependencies in `pom.xml` and replace with a single dependency on `javax/javaee-api`.
 - Remove the servlet configuration from `web.xml`. You can even delete it if your webapp doesn't need it.
-- Remove the `getClasses()` method from `Service.java`. Instead add the following annotation:
+- Remove the `getClasses()` method from `Service.java`, and instead add the following annotation:
 ```java
 @Stateless
 @ApplicationPath("/api")
