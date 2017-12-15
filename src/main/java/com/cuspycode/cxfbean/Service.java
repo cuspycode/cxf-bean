@@ -23,11 +23,13 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Application;
 
+import org.apache.johnzon.jaxrs.JohnzonProvider;
+
 public class Service extends Application {
 
     @Override
     public Set<Class<?>> getClasses() {
-	return new HashSet<Class<?>>(Arrays.asList(Service.class));
+	return new HashSet<Class<?>>(Arrays.asList(JohnzonProvider.class, Service.class));
     }
 
     @GET

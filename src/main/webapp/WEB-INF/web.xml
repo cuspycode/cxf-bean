@@ -10,12 +10,11 @@
   <servlet>
     <servlet-name>cxfservlet</servlet-name>
     <servlet-class>org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet</servlet-class>
-    <!-- CXF complains about missing resource classes if this is not present -->
     <init-param>
       <param-name>javax.ws.rs.Application</param-name>
-      <param-value>com.cuspycode.cxfbean.DummyService</param-value>
+      <param-value>com.cuspycode.cxfbean.Service</param-value>
     </init-param>
-    <!-- This does not work for some reason, the provider must be set in cxf.xml instead -->
+    <!-- This does not work for some reason. Set the JSON provider programmatically instead -->
     <!--
     <init-param>
       <param-name>jaxrs.providers</param-name>
