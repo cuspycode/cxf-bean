@@ -5,7 +5,7 @@ Simple example code that leverages Apache CXF together with Apache Johnzon to au
 - Apache CXF is a JAX-RS provider (aka JSR-339) and has support for JAX-WS and other things.
 - Apache Johnzon is a JSON Processing provider (aka JSR-353).
 
-There are many other implementations of these Java standards, but the point of combining these two is that this is what Apache TomEE provides out of the box. So any code that uses this combo will automatically have compatibility between TomEE and plain Tomcat. The packaging and configuration of CXF and Johnzon will be slightly different of course, but the business code and functionality will be the same. Other servlet containers and Java EE containers should work too, but some might need their own configuration tweaks, especially if the don't have CXF and Johnzon bundled.
+There are many other implementations of these Java standards, but the point of combining these two is that this is what Apache TomEE provides out of the box. So any code that uses this combo will automatically have compatibility between TomEE and plain Tomcat. The packaging and configuration of CXF and Johnzon will be slightly different of course, but the business code and functionality will be the same. Other servlet containers and Java EE containers should work too, but some might need their own configuration tweaks, especially if they don't have CXF and Johnzon bundled.
 
 # How to compile
 
@@ -38,6 +38,8 @@ To run the same code in TomEE, you just need to change three things:
 @Stateless
 @ApplicationPath("/api")
 public class Service extends Application {
+    ...
+}
 ```
 
 The WAR file will now only be a couple of kilobytes since all dependencies are provided by the container.
